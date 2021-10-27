@@ -1,0 +1,10 @@
+<div class="item" *ngIf="jsonData.active">
+    <div class="title">{{ jsonData.userId }}</div>
+    <div class="title">{{ jsonData.id }}</div>
+    <div class="title">{{ jsonData.title }}</div>
+    <div class="title">{{ jsonData.body }}</div>
+    <div class="title">{{ jsonData.category }}</div>
+    <div class="title">
+        <button type="button" class="button" (click)="hideItem(jsonData.id)">Delete</button>
+    </div>
+</div>

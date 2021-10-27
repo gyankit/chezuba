@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="container">
+    <div class="tabs">
+        <div class="tab" *ngFor="let category of categories; index as i">
+            <app-tab [category]="category" [idx]="i" (categoryEvent)="tabButtonClick($event)"></app-tab>
+        </div>
+    </div>
+    <div class="table">
+        <div class="thead">
+            <div class="item">
+                <div class="title">User Id</div>
+                <div class="title">Id</div>
+                <div class="title">Title</div>
+                <div class="title">Body</div>
+                <div class="title">Category</div>
+                <div class="title">Delete</div>
+            </div>
+        </div>
+        <app-loader *ngIf="loader"></app-loader>
+        <div class="tbody">
+            <div class="data" *ngFor="let data of datas">
+                <app-item [jsonData]="data" (hideItemEvent)="hideItem($event)"></app-item>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
